@@ -28,8 +28,6 @@ public class AsyncExample {
         System.out.println("Time starts-" + start);
         // int count = example.iterativeExample();
 
-        AtomicInteger result = new AtomicInteger();
-
 
         example.asyncExample().onItem()
                 .transform(t -> example.printUni(t, start))
