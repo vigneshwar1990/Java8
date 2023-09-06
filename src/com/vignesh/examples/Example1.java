@@ -1,6 +1,6 @@
-package com.coffeebucks.examples;
+package com.vignesh.examples;
 
-import com.coffeebucks.dto.Person;
+import com.vignesh.dto.Person;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,9 +25,9 @@ public class Example1 {
          */
 
         List<Person> personLessThan30 = personList
-                                        .stream()
-                                        .filter(t->t.getAge()<30)
-                                        .collect(Collectors.toList());
+                .stream()
+                .filter(t -> t.getAge() < 30)
+                .collect(Collectors.toList());
 
         System.out.println(personLessThan30.size());
 
@@ -38,7 +38,7 @@ public class Example1 {
             --Find the Person who lives in Chicago and also whose age is greater than 50.
          */
 
-        Optional<Person> person = personList.stream().filter(t->t.getAge()>50).findFirst();
+        Optional<Person> person = personList.stream().filter(t -> t.getAge() > 50).findFirst();
         person.ifPresent(name -> System.out.println(name.getName()));
 
 
@@ -48,21 +48,22 @@ public class Example1 {
          */
 
         String city = personList
-                        .stream()
-                        .filter(t->t.getName().equalsIgnoreCase("Joey"))
-                        .map(Person::getCity).findFirst().orElse("");
+                .stream()
+                .filter(t -> t.getName().equalsIgnoreCase("Joey"))
+                .map(Person::getCity).findFirst().orElse("");
 
         System.out.println(city);
+
 
         /*
             Stream Example
          */
 
-        List<Integer> num = Arrays.asList(1,2,3,4,5);
+        List<Integer> num = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> collect1 = num
-                                .stream()
-                                .map(n -> n * 2)
-                                .collect(Collectors.toList());
+                .stream()
+                .map(n -> n * 2)
+                .collect(Collectors.toList());
         System.out.println(collect1);
 
 

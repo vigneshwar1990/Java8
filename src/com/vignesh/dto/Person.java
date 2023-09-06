@@ -1,4 +1,4 @@
-package com.coffeebucks.dto;
+package com.vignesh.dto;
 
 public class Person {
 
